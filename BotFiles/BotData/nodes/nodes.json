@@ -1,0 +1,1996 @@
+{
+  "nodes": [
+    {
+      "type": "command",
+      "name": "reset",
+      "guid": "169b055e-ab1a-4572-9517-e159a172b269",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "67b7530c-f6e3-4258-b86b-d0d7052ec546"
+          ]
+        }
+      ],
+      "inputs": [],
+      "x": 52,
+      "y": 101,
+      "perms": [
+        "teachers👩‍🏫",
+        "helpers 🖍"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "Get Mentioned user",
+      "guid": "67b7530c-f6e3-4258-b86b-d0d7052ec546",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "50c8033f-d69d-4ba1-b3c3-c1c15c2de35f"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "169b055e-ab1a-4572-9517-e159a172b269"
+        }
+      ],
+      "x": 213,
+      "y": 67,
+      "rtype": "Variable",
+      "rsubtype": "Get Mentioned User",
+      "formdata": [
+        "mentioned",
+        "User",
+        "temp"
+      ],
+      "formnames": [
+        "varname",
+        "vartype",
+        "saveVarType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Reset Mentioned user",
+      "guid": "50c8033f-d69d-4ba1-b3c3-c1c15c2de35f",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "d04e9257-45f2-4cac-9e07-d5b8d7c2772b"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "67b7530c-f6e3-4258-b86b-d0d7052ec546"
+        }
+      ],
+      "x": 375,
+      "y": 71,
+      "rtype": "User Data",
+      "rsubtype": "Set User Data",
+      "formdata": [
+        "${tempVars.mentioned.id}",
+        "hw",
+        "0"
+      ],
+      "formnames": [
+        "user",
+        "field",
+        "fieldvalue"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Get User Data Reset",
+      "guid": "d04e9257-45f2-4cac-9e07-d5b8d7c2772b",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "hwc",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "971c9a89-4624-4720-a5e1-5671dce76ea5"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "50c8033f-d69d-4ba1-b3c3-c1c15c2de35f"
+        }
+      ],
+      "x": 530,
+      "y": 72,
+      "rtype": "User Data",
+      "rsubtype": "Get User Data",
+      "formdata": [
+        "${tempVars.mentioned.id}",
+        "hw",
+        "hwc",
+        "temp",
+        "User"
+      ],
+      "formnames": [
+        "user",
+        "field",
+        "varname",
+        "saveVarType",
+        "vartype"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Send Reset",
+      "guid": "971c9a89-4624-4720-a5e1-5671dce76ea5",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "c9211dc8-b053-46ff-ad71-0e76412482b4"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "d04e9257-45f2-4cac-9e07-d5b8d7c2772b"
+        }
+      ],
+      "x": 683,
+      "y": 76,
+      "rtype": "Message",
+      "rsubtype": "Send Message",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "Homeworks of user <@${tempVars.mentioned.id}> has been reset to ${tempVars.hwc}",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelName",
+        "messageText",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "command",
+      "name": "hws",
+      "guid": "71e47af3-af56-4da2-8e90-68b44c19a40b",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "7c6dba44-adad-4c52-a7d1-5f0b9236eca3"
+          ]
+        }
+      ],
+      "inputs": [],
+      "x": 52,
+      "y": 408
+    },
+    {
+      "type": "response",
+      "name": "Get HWs",
+      "guid": "7c6f3f1b-0a1a-4ac6-b2e4-c36077a45d02",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "hwc2",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "48fc4dc9-5b40-40b2-8e9c-5d5a8e457f75"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "7c6dba44-adad-4c52-a7d1-5f0b9236eca3"
+        }
+      ],
+      "x": 369,
+      "y": 378,
+      "rtype": "User Data",
+      "rsubtype": "Get User Data",
+      "formdata": [
+        "${tempVars.mentioned2.id}",
+        "hw",
+        "hwc2",
+        "temp",
+        "User"
+      ],
+      "formnames": [
+        "user",
+        "field",
+        "varname",
+        "saveVarType",
+        "vartype"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Get Mentioned User 2",
+      "guid": "7c6dba44-adad-4c52-a7d1-5f0b9236eca3",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "7c6f3f1b-0a1a-4ac6-b2e4-c36077a45d02"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "71e47af3-af56-4da2-8e90-68b44c19a40b"
+        }
+      ],
+      "x": 212,
+      "y": 352,
+      "rtype": "Variable",
+      "rsubtype": "Get Mentioned User",
+      "formdata": [
+        "mentioned2",
+        "User",
+        "temp"
+      ],
+      "formnames": [
+        "varname",
+        "vartype",
+        "saveVarType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Send HWs",
+      "guid": "71a2242e-49ff-464f-ac83-2cd9b747917f",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "48fc4dc9-5b40-40b2-8e9c-5d5a8e457f75"
+        }
+      ],
+      "x": 697,
+      "y": 377,
+      "rtype": "Message",
+      "rsubtype": "Send Message",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "<@${tempVars.mentioned2.id}> has sent ${tempVars.hwc2} homeworks.",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelName",
+        "messageText",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "If undefined",
+      "guid": "48fc4dc9-5b40-40b2-8e9c-5d5a8e457f75",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "true",
+          "connections": [
+            "c4691a75-ee28-4871-8d46-8b39fb47be4d"
+          ]
+        },
+        {
+          "label": "false",
+          "connections": [
+            "71a2242e-49ff-464f-ac83-2cd9b747917f"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "7c6f3f1b-0a1a-4ac6-b2e4-c36077a45d02"
+        }
+      ],
+      "x": 533,
+      "y": 345,
+      "rtype": "User Data",
+      "rsubtype": "Check User Data",
+      "formdata": [
+        "${tempVars.mentioned2.id}",
+        "hw",
+        "equal to",
+        "undefined"
+      ],
+      "formnames": [
+        "user",
+        "field",
+        "compare",
+        "value"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Send HWs_1",
+      "guid": "c4691a75-ee28-4871-8d46-8b39fb47be4d",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "48fc4dc9-5b40-40b2-8e9c-5d5a8e457f75"
+        }
+      ],
+      "x": 696,
+      "y": 261,
+      "rtype": "Message",
+      "rsubtype": "Send Message",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "<@${tempVars.mentioned2.id}> has sent 0 homeworks.",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelName",
+        "messageText",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "command",
+      "name": "help",
+      "guid": "13b76313-469c-4369-9452-009f8a5bfa34",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "b6b44dda-4976-41b6-a70b-a8903ccd02a9"
+          ]
+        }
+      ],
+      "inputs": [],
+      "x": 52,
+      "y": 603
+    },
+    {
+      "type": "response",
+      "name": "Help message",
+      "guid": "b6b44dda-4976-41b6-a70b-a8903ccd02a9",
+      "reactionFields": [],
+      "embedfields": [
+        {
+          "name": "$help",
+          "value": "Sends the help menu.",
+          "inline": "false"
+        },
+        {
+          "name": "$hws @USER",
+          "value": "Sends number of homeworks sent by a mentioned user.\n",
+          "inline": "false"
+        },
+        {
+          "name": "$hwtop",
+          "value": "Mentions a person who has send the most homeworks.",
+          "inline": "false"
+        }
+      ],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "13b76313-469c-4369-9452-009f8a5bfa34"
+        }
+      ],
+      "x": 214,
+      "y": 575,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "299CFF",
+        "Commands description:",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "1.IT Bot",
+        "BOOL_TRUE@@",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "command",
+      "name": "hwtop",
+      "guid": "89e02627-c85f-44bb-9054-de6a8a771ff4",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "92627047-2286-4df9-a946-b953fd1a85b8"
+          ]
+        }
+      ],
+      "inputs": [],
+      "x": 1282,
+      "y": 91,
+      "perms": []
+    },
+    {
+      "type": "command",
+      "name": "hwtopreset",
+      "guid": "5bef059e-7280-4f6d-bf98-560f29430d1c",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "d88a0ef0-bf33-46af-ba2f-8283a2d0db8f"
+          ]
+        }
+      ],
+      "inputs": [],
+      "x": 1164,
+      "y": 355,
+      "perms": [
+        "helpers 🖍",
+        "teachers👩‍🏫"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "Get Leader",
+      "guid": "84d15c79-db10-475f-bb10-7457b00ae6a5",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "leader",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "4071610a-0b48-4759-8e85-b700430543ea"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "92627047-2286-4df9-a946-b953fd1a85b8"
+        }
+      ],
+      "x": 1606,
+      "y": 171,
+      "rtype": "User Data",
+      "rsubtype": "Get User Data",
+      "formdata": [
+        "1065941772372557864",
+        "leader",
+        "leader",
+        "temp",
+        "User"
+      ],
+      "formnames": [
+        "user",
+        "field",
+        "varname",
+        "saveVarType",
+        "vartype"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Get Leader hw",
+      "guid": "4071610a-0b48-4759-8e85-b700430543ea",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "leaderhw",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "57e7c708-b8e0-443f-a140-b4de57f2ad21"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "84d15c79-db10-475f-bb10-7457b00ae6a5"
+        }
+      ],
+      "x": 1767,
+      "y": 177,
+      "rtype": "User Data",
+      "rsubtype": "Get User Data",
+      "formdata": [
+        "1065941772372557864",
+        "leaderhw",
+        "leaderhw",
+        "temp",
+        "User"
+      ],
+      "formnames": [
+        "user",
+        "field",
+        "varname",
+        "saveVarType",
+        "vartype"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Send Leader",
+      "guid": "57e7c708-b8e0-443f-a140-b4de57f2ad21",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "4071610a-0b48-4759-8e85-b700430543ea"
+        }
+      ],
+      "x": 1927,
+      "y": 176,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "299CFF",
+        "Leader",
+        "",
+        "",
+        "",
+        "",
+        "${tempVars.leader} has sent ${tempVars.leaderhw} homeworks and is in the lead.",
+        "",
+        "",
+        "1.IT Bot",
+        "BOOL_TRUE@@",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Set 00",
+      "guid": "86b59ce7-d7b4-430e-b080-49b1fa362deb",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "01ef875f-f8e0-40f7-a33f-7a5180528e5a"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "d88a0ef0-bf33-46af-ba2f-8283a2d0db8f"
+        }
+      ],
+      "x": 1447,
+      "y": 329,
+      "rtype": "User Data",
+      "rsubtype": "Set User Data",
+      "formdata": [
+        "1065941772372557864",
+        "leader",
+        "Nobody"
+      ],
+      "formnames": [
+        "user",
+        "field",
+        "fieldvalue"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Set 00_1",
+      "guid": "01ef875f-f8e0-40f7-a33f-7a5180528e5a",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "15f4c085-58a2-49e1-bcc6-1e98a2fb0b98"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "86b59ce7-d7b4-430e-b080-49b1fa362deb"
+        }
+      ],
+      "x": 1609,
+      "y": 328,
+      "rtype": "User Data",
+      "rsubtype": "Set User Data",
+      "formdata": [
+        "1065941772372557864",
+        "leaderhw",
+        "0"
+      ],
+      "formnames": [
+        "user",
+        "field",
+        "fieldvalue"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Nobody and 0",
+      "guid": "c9211dc8-b053-46ff-ad71-0e76412482b4",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "ff33916d-c7b2-4e9a-ae99-e5ad1b3413ef"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "971c9a89-4624-4720-a5e1-5671dce76ea5"
+        }
+      ],
+      "x": 840,
+      "y": 77,
+      "rtype": "User Data",
+      "rsubtype": "Set User Data",
+      "formdata": [
+        "1065941772372557864",
+        "leader",
+        "Nobody"
+      ],
+      "formnames": [
+        "user",
+        "field",
+        "fieldvalue"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Nobody and 0_1",
+      "guid": "ff33916d-c7b2-4e9a-ae99-e5ad1b3413ef",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "c9211dc8-b053-46ff-ad71-0e76412482b4"
+        }
+      ],
+      "x": 1004,
+      "y": 78,
+      "rtype": "User Data",
+      "rsubtype": "Set User Data",
+      "formdata": [
+        "1065941772372557864",
+        "leaderhw",
+        "0"
+      ],
+      "formnames": [
+        "user",
+        "field",
+        "fieldvalue"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Check if two",
+      "guid": "92627047-2286-4df9-a946-b953fd1a85b8",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "true",
+          "connections": [
+            "53844e0d-b586-421e-8ba4-4d7952c58726"
+          ]
+        },
+        {
+          "label": "false",
+          "connections": [
+            "84d15c79-db10-475f-bb10-7457b00ae6a5"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "89e02627-c85f-44bb-9054-de6a8a771ff4"
+        }
+      ],
+      "x": 1446,
+      "y": 80,
+      "rtype": "User Data",
+      "rsubtype": "Check User Data",
+      "formdata": [
+        "1065941772372557864",
+        "equal",
+        "equal to",
+        "1"
+      ],
+      "formnames": [
+        "user",
+        "field",
+        "compare",
+        "value"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Get Leader_1",
+      "guid": "53844e0d-b586-421e-8ba4-4d7952c58726",
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "e5530f77-3068-4389-9758-8a2f75ba15b4"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "92627047-2286-4df9-a946-b953fd1a85b8"
+        }
+      ],
+      "x": 1607,
+      "y": 49,
+      "rtype": "User Data",
+      "rsubtype": "Get User Data",
+      "formdata": [
+        "1065941772372557864",
+        "leader",
+        "leader",
+        "temp",
+        "User"
+      ],
+      "formnames": [
+        "user",
+        "field",
+        "varname",
+        "saveVarType",
+        "vartype"
+      ],
+      "messageActionRows": []
+    },
+    {
+      "type": "response",
+      "name": "Get Leader_2",
+      "guid": "e5530f77-3068-4389-9758-8a2f75ba15b4",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "leader2",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "3f0c3603-646d-4ac3-829d-7008d5176372"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "53844e0d-b586-421e-8ba4-4d7952c58726"
+        }
+      ],
+      "x": 1765,
+      "y": 47,
+      "rtype": "User Data",
+      "rsubtype": "Get User Data",
+      "formdata": [
+        "1065941772372557864",
+        "leader2",
+        "leader2",
+        "temp",
+        "User"
+      ],
+      "formnames": [
+        "user",
+        "field",
+        "varname",
+        "saveVarType",
+        "vartype"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Get Leader hw_1",
+      "guid": "3f0c3603-646d-4ac3-829d-7008d5176372",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "leaderhw",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "efa820e0-8022-4f33-8b75-ee28f6383e16"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "e5530f77-3068-4389-9758-8a2f75ba15b4"
+        }
+      ],
+      "x": 1925,
+      "y": 24,
+      "rtype": "User Data",
+      "rsubtype": "Get User Data",
+      "formdata": [
+        "1065941772372557864",
+        "leaderhw",
+        "leaderhw",
+        "temp",
+        "User"
+      ],
+      "formnames": [
+        "user",
+        "field",
+        "varname",
+        "saveVarType",
+        "vartype"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Send Leader_1",
+      "guid": "efa820e0-8022-4f33-8b75-ee28f6383e16",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "3f0c3603-646d-4ac3-829d-7008d5176372"
+        }
+      ],
+      "x": 2085,
+      "y": 45,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "299CFF",
+        "Leader",
+        "",
+        "",
+        "",
+        "",
+        "Both ${tempVars.leader2} and ${tempVars.leader} have got ${tempVars.leaderhw} homeworks and are in the lead.",
+        "",
+        "",
+        "1.IT Bot",
+        "BOOL_TRUE@@",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "command",
+      "name": "subhw",
+      "guid": "008a712d-0d98-4b15-881b-7ec4d99092b2",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "2a5d620b-ab24-4bcc-834a-5e368d8a2917"
+          ]
+        }
+      ],
+      "inputs": [],
+      "x": 50,
+      "y": 791,
+      "perms": [
+        "teachers👩‍🏫",
+        "helpers 🖍"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "Get user",
+      "guid": "2a5d620b-ab24-4bcc-834a-5e368d8a2917",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "a97d1f03-7fba-4a80-8d25-7ac0effc7284"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "008a712d-0d98-4b15-881b-7ec4d99092b2"
+        }
+      ],
+      "x": 216,
+      "y": 754,
+      "rtype": "Variable",
+      "rsubtype": "Get Mentioned User",
+      "formdata": [
+        "user",
+        "User",
+        "temp"
+      ],
+      "formnames": [
+        "varname",
+        "vartype",
+        "saveVarType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "edit",
+      "guid": "2bd52c35-2dbd-4054-b99a-ffefd4a715d7",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "fe138327-9550-4346-9a17-a62afe36091c"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "a97d1f03-7fba-4a80-8d25-7ac0effc7284"
+        }
+      ],
+      "x": 544,
+      "y": 756,
+      "rtype": "User Data",
+      "rsubtype": "Edit User Data",
+      "formdata": [
+        "${tempVars.user.id}",
+        "hw",
+        "-",
+        "${tempVars.amount}"
+      ],
+      "formnames": [
+        "user",
+        "field",
+        "oper",
+        "value"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "store amount",
+      "guid": "a97d1f03-7fba-4a80-8d25-7ac0effc7284",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "amount",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "2bd52c35-2dbd-4054-b99a-ffefd4a715d7"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "2a5d620b-ab24-4bcc-834a-5e368d8a2917"
+        }
+      ],
+      "x": 378,
+      "y": 755,
+      "rtype": "Variable",
+      "rsubtype": "Store Value in Variable",
+      "formdata": [
+        "amount",
+        "Number",
+        "temp",
+        "2"
+      ],
+      "formnames": [
+        "varname",
+        "vartype",
+        "saveVarType",
+        "param"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Subtracted",
+      "guid": "fe138327-9550-4346-9a17-a62afe36091c",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "message",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "cf39cdaa-0d15-4e69-9567-87aa408b4651"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "2bd52c35-2dbd-4054-b99a-ffefd4a715d7"
+        }
+      ],
+      "x": 704,
+      "y": 757,
+      "rtype": "Message",
+      "rsubtype": "Send Message",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "Succesfully subtracted ${tempVars.amount} homeworks from <@${tempVars.user.id}>.",
+        "message",
+        "temp"
+      ],
+      "formnames": [
+        "channelName",
+        "messageText",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "command",
+      "name": "addhw",
+      "guid": "699e7fc1-45db-4bed-9740-ed6499e4031b",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "b42ec603-0caa-4dba-b05e-bf1df0a2cbbd"
+          ]
+        }
+      ],
+      "inputs": [],
+      "x": 46,
+      "y": 975,
+      "perms": [
+        "teachers👩‍🏫",
+        "helpers 🖍"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "Get user_1",
+      "guid": "b42ec603-0caa-4dba-b05e-bf1df0a2cbbd",
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "b1336a1f-93ab-4fd3-8d7b-5df5aedee9b8"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "699e7fc1-45db-4bed-9740-ed6499e4031b"
+        }
+      ],
+      "x": 207,
+      "y": 942,
+      "rtype": "Variable",
+      "rsubtype": "Get Mentioned User",
+      "formdata": [
+        "user",
+        "User",
+        "temp"
+      ],
+      "formnames": [
+        "varname",
+        "vartype",
+        "saveVarType"
+      ],
+      "messageActionRows": []
+    },
+    {
+      "type": "response",
+      "name": "store amount_1",
+      "guid": "b1336a1f-93ab-4fd3-8d7b-5df5aedee9b8",
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "18ec94c1-94dd-4dd2-bb3a-225b67fe555c"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "b42ec603-0caa-4dba-b05e-bf1df0a2cbbd"
+        }
+      ],
+      "x": 368,
+      "y": 919,
+      "rtype": "Variable",
+      "rsubtype": "Store Value in Variable",
+      "formdata": [
+        "amount",
+        "Number",
+        "temp",
+        "2"
+      ],
+      "formnames": [
+        "varname",
+        "vartype",
+        "saveVarType",
+        "param"
+      ],
+      "messageActionRows": []
+    },
+    {
+      "type": "response",
+      "name": "edit_1",
+      "guid": "18ec94c1-94dd-4dd2-bb3a-225b67fe555c",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "8ca242f8-782e-4edc-9012-dd603ddeb9f4"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "b1336a1f-93ab-4fd3-8d7b-5df5aedee9b8"
+        }
+      ],
+      "x": 527,
+      "y": 943,
+      "rtype": "User Data",
+      "rsubtype": "Edit User Data",
+      "formdata": [
+        "${tempVars.user.id}",
+        "hw",
+        "+",
+        "${tempVars.amount}"
+      ],
+      "formnames": [
+        "user",
+        "field",
+        "oper",
+        "value"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Subtracted_1",
+      "guid": "8ca242f8-782e-4edc-9012-dd603ddeb9f4",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "bac8f483-0d80-4ac3-9dcc-8f24d1409e86"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "18ec94c1-94dd-4dd2-bb3a-225b67fe555c"
+        }
+      ],
+      "x": 687,
+      "y": 947,
+      "rtype": "Message",
+      "rsubtype": "Send Message",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "Succesfully added ${tempVars.amount} homeworks to<@${tempVars.user.id}>.",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelName",
+        "messageText",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Set 00_2",
+      "guid": "15f4c085-58a2-49e1-bcc6-1e98a2fb0b98",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "01ef875f-f8e0-40f7-a33f-7a5180528e5a"
+        }
+      ],
+      "x": 1770,
+      "y": 330,
+      "rtype": "User Data",
+      "rsubtype": "Set User Data",
+      "formdata": [
+        "1065941772372557864",
+        "equal",
+        "0"
+      ],
+      "formnames": [
+        "user",
+        "field",
+        "fieldvalue"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Check",
+      "guid": "cf39cdaa-0d15-4e69-9567-87aa408b4651",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "true",
+          "connections": [
+            "dc238141-c43b-4391-a62a-50032ae89dc8"
+          ]
+        },
+        {
+          "label": "false",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "fe138327-9550-4346-9a17-a62afe36091c"
+        }
+      ],
+      "x": 1184,
+      "y": 759,
+      "rtype": "User Data",
+      "rsubtype": "Check User Data",
+      "formdata": [
+        "1065941772372557864",
+        "leader",
+        "equal to",
+        "<@${tempVars.user.id}>"
+      ],
+      "formnames": [
+        "user",
+        "field",
+        "compare",
+        "value"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Edit",
+      "guid": "dc238141-c43b-4391-a62a-50032ae89dc8",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "30f047dc-3821-40f5-9033-fd4645467246"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "cf39cdaa-0d15-4e69-9567-87aa408b4651"
+        }
+      ],
+      "x": 1345,
+      "y": 756,
+      "rtype": "User Data",
+      "rsubtype": "Edit User Data",
+      "formdata": [
+        "1065941772372557864",
+        "leaderhw",
+        "-",
+        "${tempVars.amount}"
+      ],
+      "formnames": [
+        "user",
+        "field",
+        "oper",
+        "value"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Edit_1",
+      "guid": "1d2927f3-5c24-4ad1-8395-ba88a053ccf6",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "d0acf0ac-636d-49af-93b9-c712c7ae2dc1"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "fc26a419-1798-491c-b81b-3d4715a7b747"
+        }
+      ],
+      "x": 1829,
+      "y": 900,
+      "rtype": "User Data",
+      "rsubtype": "Edit User Data",
+      "formdata": [
+        "1065941772372557864",
+        "leaderhw",
+        "+",
+        "${tempVars.amount}"
+      ],
+      "formnames": [
+        "user",
+        "field",
+        "oper",
+        "value"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Check_1",
+      "guid": "fc26a419-1798-491c-b81b-3d4715a7b747",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "true",
+          "connections": [
+            "1d2927f3-5c24-4ad1-8395-ba88a053ccf6"
+          ]
+        },
+        {
+          "label": "false",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "9f568972-d411-4dfe-b0a2-511e5296681d"
+        }
+      ],
+      "x": 1666,
+      "y": 918,
+      "rtype": "User Data",
+      "rsubtype": "Check User Data",
+      "formdata": [
+        "1065941772372557864",
+        "leaderhw",
+        "less than",
+        "${tempVars.hwuser}"
+      ],
+      "formnames": [
+        "user",
+        "field",
+        "compare",
+        "value"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Edit test",
+      "guid": "9f568972-d411-4dfe-b0a2-511e5296681d",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "fc26a419-1798-491c-b81b-3d4715a7b747"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "0ff5e67c-3d22-4d9b-8c4c-aeec0010e128"
+        }
+      ],
+      "x": 1504,
+      "y": 938,
+      "rtype": "Variable",
+      "rsubtype": "Edit Variable",
+      "formdata": [
+        "tempVars.hwuser",
+        "temp",
+        "+",
+        "${tempVars.amount}"
+      ],
+      "formnames": [
+        "varname",
+        "saveVarType",
+        "oper",
+        "value"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Get hws",
+      "guid": "0ff5e67c-3d22-4d9b-8c4c-aeec0010e128",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "hwuser",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "9f568972-d411-4dfe-b0a2-511e5296681d"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "bac8f483-0d80-4ac3-9dcc-8f24d1409e86"
+        }
+      ],
+      "x": 1339,
+      "y": 933,
+      "rtype": "User Data",
+      "rsubtype": "Get User Data",
+      "formdata": [
+        "${tempVars.user.id}",
+        "hw",
+        "hwuser",
+        "temp",
+        "User"
+      ],
+      "formnames": [
+        "user",
+        "field",
+        "varname",
+        "saveVarType",
+        "vartype"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Get hwuser",
+      "guid": "bac8f483-0d80-4ac3-9dcc-8f24d1409e86",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "hwuser",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "0ff5e67c-3d22-4d9b-8c4c-aeec0010e128"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "8ca242f8-782e-4edc-9012-dd603ddeb9f4"
+        }
+      ],
+      "x": 1175,
+      "y": 940,
+      "rtype": "User Data",
+      "rsubtype": "Get User Data",
+      "formdata": [
+        "1065941772372557864",
+        "hwuser",
+        "hwuser",
+        "temp",
+        "User"
+      ],
+      "formnames": [
+        "user",
+        "field",
+        "varname",
+        "saveVarType",
+        "vartype"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "Set",
+      "guid": "d0acf0ac-636d-49af-93b9-c712c7ae2dc1",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "1d2927f3-5c24-4ad1-8395-ba88a053ccf6"
+        }
+      ],
+      "x": 1990,
+      "y": 900,
+      "rtype": "User Data",
+      "rsubtype": "Set User Data",
+      "formdata": [
+        "1065941772372557864",
+        "leader",
+        "<@${tempVars.user.id}>"
+      ],
+      "formnames": [
+        "user",
+        "field",
+        "fieldvalue"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "is 0",
+      "guid": "30f047dc-3821-40f5-9033-fd4645467246",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "true",
+          "connections": [
+            "d88a0ef0-bf33-46af-ba2f-8283a2d0db8f"
+          ]
+        },
+        {
+          "label": "false",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "dc238141-c43b-4391-a62a-50032ae89dc8"
+        }
+      ],
+      "x": 1503,
+      "y": 709,
+      "rtype": "User Data",
+      "rsubtype": "Check User Data",
+      "formdata": [
+        "1065941772372557864",
+        "leaderhw",
+        "less than",
+        "1"
+      ],
+      "formnames": [
+        "user",
+        "field",
+        "compare",
+        "value"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "MI",
+      "guid": "d88a0ef0-bf33-46af-ba2f-8283a2d0db8f",
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "86b59ce7-d7b4-430e-b080-49b1fa362deb"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "5bef059e-7280-4f6d-bf98-560f29430d1c"
+        },
+        {
+          "label": "trigger",
+          "id": "30f047dc-3821-40f5-9033-fd4645467246"
+        }
+      ],
+      "x": 1335,
+      "y": 444,
+      "rtype": "Control",
+      "rsubtype": "Multiple Input",
+      "messageActionRows": []
+    },
+    {
+      "type": "command",
+      "name": "ahelp",
+      "guid": "b5450bac-ae11-4c4a-8ea9-bbd37b3cd1d6",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "6fdf09d7-9b4d-4d34-8272-39dfd1f55319"
+          ]
+        }
+      ],
+      "inputs": [],
+      "x": 448,
+      "y": 612
+    },
+    {
+      "type": "response",
+      "name": "Help message_1",
+      "guid": "6fdf09d7-9b4d-4d34-8272-39dfd1f55319",
+      "reactionFields": [],
+      "embedfields": [
+        {
+          "name": "$addhw @USER {AMOUNT}",
+          "value": "Adds selected amount of homeworks to mentioned USER.",
+          "inline": "false"
+        },
+        {
+          "name": "$subhw @USER {AMOUNT}",
+          "value": "Substracts selected amount of homeworks from mentioned USER.",
+          "inline": "false"
+        },
+        {
+          "name": "$reset @USER",
+          "value": "Resets number of homeworks sent by a mentioned USER.",
+          "inline": "false"
+        },
+        {
+          "name": "$hwtopreset",
+          "value": "Resets leader in hwtop.",
+          "inline": "false"
+        }
+      ],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "b5450bac-ae11-4c4a-8ea9-bbd37b3cd1d6"
+        }
+      ],
+      "x": 614,
+      "y": 564,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "299CFF",
+        "Commands description:",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "1.IT Bot",
+        "BOOL_TRUE@@",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "command",
+      "name": "addrole",
+      "guid": "dbdf521a-3261-43cf-9cf3-534b35f8ff31",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "a734e2c8-b1af-438a-9f23-ca7d3abc81ec"
+          ]
+        }
+      ],
+      "inputs": [],
+      "x": 51,
+      "y": 1176
+    },
+    {
+      "type": "response",
+      "name": "Get UsEr",
+      "guid": "a734e2c8-b1af-438a-9f23-ca7d3abc81ec",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "62e0db27-0bd9-4d85-b4bd-2fb66ba3ee30"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "dbdf521a-3261-43cf-9cf3-534b35f8ff31"
+        }
+      ],
+      "x": 214,
+      "y": 1153,
+      "rtype": "Variable",
+      "rsubtype": "Get Mentioned User",
+      "formdata": [
+        "UsEr",
+        "User",
+        "temp"
+      ],
+      "formnames": [
+        "varname",
+        "vartype",
+        "saveVarType"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    },
+    {
+      "type": "response",
+      "name": "ADD role",
+      "guid": "62e0db27-0bd9-4d85-b4bd-2fb66ba3ee30",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "a734e2c8-b1af-438a-9f23-ca7d3abc81ec"
+        }
+      ],
+      "x": 382,
+      "y": 1160,
+      "rtype": "User Action",
+      "rsubtype": "Add Role to User",
+      "formdata": [
+        "${tempVars.UsEr.id}",
+        "1065980383763628071"
+      ],
+      "formnames": [
+        "user",
+        "roleName"
+      ],
+      "messageActionRows": [],
+      "valueFields": []
+    }
+  ]
+}

@@ -1,0 +1,614 @@
+{
+  "command": [
+    {
+      "name": "reset",
+      "perms": [
+        "teachers👩‍🏫",
+        "helpers 🖍"
+      ],
+      "actions": [
+        {
+          "name": "Get Mentioned user",
+          "category": "Variable",
+          "type": "Get Mentioned User",
+          "messageActionRows": [],
+          "varname": "mentioned",
+          "vartype": "User",
+          "savevartype": "temp"
+        },
+        {
+          "name": "Reset Mentioned user",
+          "category": "User Data",
+          "type": "Set User Data",
+          "messageActionRows": [],
+          "user": "${tempVars.mentioned.id}",
+          "field": "hw",
+          "fieldvalue": "0"
+        },
+        {
+          "name": "Get User Data Reset",
+          "category": "User Data",
+          "type": "Get User Data",
+          "messageActionRows": [],
+          "user": "${tempVars.mentioned.id}",
+          "field": "hw",
+          "varname": "hwc",
+          "savevartype": "temp",
+          "vartype": "User"
+        },
+        {
+          "name": "Send Reset",
+          "category": "Message",
+          "type": "Send Message",
+          "messageActionRows": [],
+          "channelname": "${dbsVars.CommandChannel.id}",
+          "messagetext": "Homeworks of user <@${tempVars.mentioned.id}> has been reset to ${tempVars.hwc}",
+          "savetovariable": "",
+          "savetovariabletype": "temp"
+        },
+        {
+          "name": "Nobody and 0",
+          "category": "User Data",
+          "type": "Set User Data",
+          "messageActionRows": [],
+          "user": "1065941772372557864",
+          "field": "leader",
+          "fieldvalue": "Nobody"
+        },
+        {
+          "name": "Nobody and 0_1",
+          "category": "User Data",
+          "type": "Set User Data",
+          "messageActionRows": [],
+          "user": "1065941772372557864",
+          "field": "leaderhw",
+          "fieldvalue": "0"
+        }
+      ]
+    },
+    {
+      "name": "hws",
+      "actions": [
+        {
+          "name": "Get Mentioned User 2",
+          "category": "Variable",
+          "type": "Get Mentioned User",
+          "messageActionRows": [],
+          "varname": "mentioned2",
+          "vartype": "User",
+          "savevartype": "temp"
+        },
+        {
+          "name": "Get HWs",
+          "category": "User Data",
+          "type": "Get User Data",
+          "messageActionRows": [],
+          "user": "${tempVars.mentioned2.id}",
+          "field": "hw",
+          "varname": "hwc2",
+          "savevartype": "temp",
+          "vartype": "User"
+        },
+        {
+          "name": "If undefined",
+          "category": "User Data",
+          "type": "Check User Data",
+          "trueActions": [
+            {
+              "name": "Send HWs_1",
+              "category": "Message",
+              "type": "Send Message",
+              "messageActionRows": [],
+              "channelname": "${dbsVars.CommandChannel.id}",
+              "messagetext": "<@${tempVars.mentioned2.id}> has sent 0 homeworks.",
+              "savetovariable": "",
+              "savetovariabletype": "temp"
+            }
+          ],
+          "falseActions": [
+            {
+              "name": "Send HWs",
+              "category": "Message",
+              "type": "Send Message",
+              "messageActionRows": [],
+              "channelname": "${dbsVars.CommandChannel.id}",
+              "messagetext": "<@${tempVars.mentioned2.id}> has sent ${tempVars.hwc2} homeworks.",
+              "savetovariable": "",
+              "savetovariabletype": "temp"
+            }
+          ],
+          "messageActionRows": [],
+          "user": "${tempVars.mentioned2.id}",
+          "field": "hw",
+          "compare": "equal to",
+          "value": "undefined"
+        }
+      ]
+    },
+    {
+      "name": "help",
+      "actions": [
+        {
+          "name": "Help message",
+          "category": "Message",
+          "type": "Send Embed",
+          "fields": [
+            {
+              "name": "$help",
+              "value": "Sends the help menu.",
+              "inline": "false"
+            },
+            {
+              "name": "$hws @USER",
+              "value": "Sends number of homeworks sent by a mentioned user.\n",
+              "inline": "false"
+            },
+            {
+              "name": "$hwtop",
+              "value": "Mentions a person who has send the most homeworks.",
+              "inline": "false"
+            }
+          ],
+          "messageActionRows": [],
+          "channelname": "${dbsVars.CommandChannel.id}",
+          "color": "299CFF",
+          "title": "Commands description:",
+          "url": "",
+          "authorname": "",
+          "authorimageurl": "",
+          "authorlink": "",
+          "description": "",
+          "thumbnail": "",
+          "image": "",
+          "footer": "1.IT Bot",
+          "timestamp": "BOOL_TRUE@@",
+          "savetovariable": "",
+          "savetovariabletype": "temp"
+        }
+      ]
+    },
+    {
+      "name": "hwtop",
+      "perms": [],
+      "actions": [
+        {
+          "name": "Check if two",
+          "category": "User Data",
+          "type": "Check User Data",
+          "trueActions": [
+            {
+              "name": "Get Leader_1",
+              "category": "User Data",
+              "type": "Get User Data",
+              "messageActionRows": [],
+              "user": "1065941772372557864",
+              "field": "leader",
+              "varname": "leader",
+              "savevartype": "temp",
+              "vartype": "User"
+            },
+            {
+              "name": "Get Leader_2",
+              "category": "User Data",
+              "type": "Get User Data",
+              "messageActionRows": [],
+              "user": "1065941772372557864",
+              "field": "leader2",
+              "varname": "leader2",
+              "savevartype": "temp",
+              "vartype": "User"
+            },
+            {
+              "name": "Get Leader hw_1",
+              "category": "User Data",
+              "type": "Get User Data",
+              "messageActionRows": [],
+              "user": "1065941772372557864",
+              "field": "leaderhw",
+              "varname": "leaderhw",
+              "savevartype": "temp",
+              "vartype": "User"
+            },
+            {
+              "name": "Send Leader_1",
+              "category": "Message",
+              "type": "Send Embed",
+              "messageActionRows": [],
+              "channelname": "${dbsVars.CommandChannel.id}",
+              "color": "299CFF",
+              "title": "Leader",
+              "url": "",
+              "authorname": "",
+              "authorimageurl": "",
+              "authorlink": "",
+              "description": "Both ${tempVars.leader2} and ${tempVars.leader} have got ${tempVars.leaderhw} homeworks and are in the lead.",
+              "thumbnail": "",
+              "image": "",
+              "footer": "1.IT Bot",
+              "timestamp": "BOOL_TRUE@@",
+              "savetovariable": "",
+              "savetovariabletype": "temp"
+            }
+          ],
+          "falseActions": [
+            {
+              "name": "Get Leader",
+              "category": "User Data",
+              "type": "Get User Data",
+              "messageActionRows": [],
+              "user": "1065941772372557864",
+              "field": "leader",
+              "varname": "leader",
+              "savevartype": "temp",
+              "vartype": "User"
+            },
+            {
+              "name": "Get Leader hw",
+              "category": "User Data",
+              "type": "Get User Data",
+              "messageActionRows": [],
+              "user": "1065941772372557864",
+              "field": "leaderhw",
+              "varname": "leaderhw",
+              "savevartype": "temp",
+              "vartype": "User"
+            },
+            {
+              "name": "Send Leader",
+              "category": "Message",
+              "type": "Send Embed",
+              "messageActionRows": [],
+              "channelname": "${dbsVars.CommandChannel.id}",
+              "color": "299CFF",
+              "title": "Leader",
+              "url": "",
+              "authorname": "",
+              "authorimageurl": "",
+              "authorlink": "",
+              "description": "${tempVars.leader} has sent ${tempVars.leaderhw} homeworks and is in the lead.",
+              "thumbnail": "",
+              "image": "",
+              "footer": "1.IT Bot",
+              "timestamp": "BOOL_TRUE@@",
+              "savetovariable": "",
+              "savetovariabletype": "temp"
+            }
+          ],
+          "messageActionRows": [],
+          "user": "1065941772372557864",
+          "field": "equal",
+          "compare": "equal to",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "name": "hwtopreset",
+      "perms": [
+        "helpers 🖍",
+        "teachers👩‍🏫"
+      ],
+      "actions": [
+        {
+          "name": "Set 00",
+          "category": "User Data",
+          "type": "Set User Data",
+          "messageActionRows": [],
+          "user": "1065941772372557864",
+          "field": "leader",
+          "fieldvalue": "Nobody"
+        },
+        {
+          "name": "Set 00_1",
+          "category": "User Data",
+          "type": "Set User Data",
+          "messageActionRows": [],
+          "user": "1065941772372557864",
+          "field": "leaderhw",
+          "fieldvalue": "0"
+        },
+        {
+          "name": "Set 00_2",
+          "category": "User Data",
+          "type": "Set User Data",
+          "messageActionRows": [],
+          "user": "1065941772372557864",
+          "field": "equal",
+          "fieldvalue": "0"
+        }
+      ]
+    },
+    {
+      "name": "subhw",
+      "perms": [
+        "teachers👩‍🏫",
+        "helpers 🖍"
+      ],
+      "actions": [
+        {
+          "name": "Get user",
+          "category": "Variable",
+          "type": "Get Mentioned User",
+          "messageActionRows": [],
+          "varname": "user",
+          "vartype": "User",
+          "savevartype": "temp"
+        },
+        {
+          "name": "store amount",
+          "category": "Variable",
+          "type": "Store Value in Variable",
+          "messageActionRows": [],
+          "varname": "amount",
+          "vartype": "Number",
+          "savevartype": "temp",
+          "param": "2"
+        },
+        {
+          "name": "edit",
+          "category": "User Data",
+          "type": "Edit User Data",
+          "messageActionRows": [],
+          "user": "${tempVars.user.id}",
+          "field": "hw",
+          "oper": "-",
+          "value": "${tempVars.amount}"
+        },
+        {
+          "name": "Subtracted",
+          "category": "Message",
+          "type": "Send Message",
+          "messageActionRows": [],
+          "channelname": "${dbsVars.CommandChannel.id}",
+          "messagetext": "Succesfully subtracted ${tempVars.amount} homeworks from <@${tempVars.user.id}>.",
+          "savetovariable": "message",
+          "savetovariabletype": "temp"
+        },
+        {
+          "name": "Check",
+          "category": "User Data",
+          "type": "Check User Data",
+          "trueActions": [
+            {
+              "name": "Edit",
+              "category": "User Data",
+              "type": "Edit User Data",
+              "messageActionRows": [],
+              "user": "1065941772372557864",
+              "field": "leaderhw",
+              "oper": "-",
+              "value": "${tempVars.amount}"
+            },
+            {
+              "name": "is 0",
+              "category": "User Data",
+              "type": "Check User Data",
+              "trueActions": [
+                {
+                  "name": "Set 00",
+                  "category": "User Data",
+                  "type": "Set User Data",
+                  "messageActionRows": [],
+                  "user": "1065941772372557864",
+                  "field": "leader",
+                  "fieldvalue": "Nobody"
+                },
+                {
+                  "name": "Set 00_1",
+                  "category": "User Data",
+                  "type": "Set User Data",
+                  "messageActionRows": [],
+                  "user": "1065941772372557864",
+                  "field": "leaderhw",
+                  "fieldvalue": "0"
+                },
+                {
+                  "name": "Set 00_2",
+                  "category": "User Data",
+                  "type": "Set User Data",
+                  "messageActionRows": [],
+                  "user": "1065941772372557864",
+                  "field": "equal",
+                  "fieldvalue": "0"
+                }
+              ],
+              "falseActions": [],
+              "messageActionRows": [],
+              "user": "1065941772372557864",
+              "field": "leaderhw",
+              "compare": "less than",
+              "value": "1"
+            }
+          ],
+          "falseActions": [],
+          "messageActionRows": [],
+          "user": "1065941772372557864",
+          "field": "leader",
+          "compare": "equal to",
+          "value": "<@${tempVars.user.id}>"
+        }
+      ]
+    },
+    {
+      "name": "addhw",
+      "perms": [
+        "teachers👩‍🏫",
+        "helpers 🖍"
+      ],
+      "actions": [
+        {
+          "name": "Get user_1",
+          "category": "Variable",
+          "type": "Get Mentioned User",
+          "messageActionRows": [],
+          "varname": "user",
+          "vartype": "User",
+          "savevartype": "temp"
+        },
+        {
+          "name": "store amount_1",
+          "category": "Variable",
+          "type": "Store Value in Variable",
+          "messageActionRows": [],
+          "varname": "amount",
+          "vartype": "Number",
+          "savevartype": "temp",
+          "param": "2"
+        },
+        {
+          "name": "edit_1",
+          "category": "User Data",
+          "type": "Edit User Data",
+          "messageActionRows": [],
+          "user": "${tempVars.user.id}",
+          "field": "hw",
+          "oper": "+",
+          "value": "${tempVars.amount}"
+        },
+        {
+          "name": "Subtracted_1",
+          "category": "Message",
+          "type": "Send Message",
+          "messageActionRows": [],
+          "channelname": "${dbsVars.CommandChannel.id}",
+          "messagetext": "Succesfully added ${tempVars.amount} homeworks to<@${tempVars.user.id}>.",
+          "savetovariable": "",
+          "savetovariabletype": "temp"
+        },
+        {
+          "name": "Get hwuser",
+          "category": "User Data",
+          "type": "Get User Data",
+          "messageActionRows": [],
+          "user": "1065941772372557864",
+          "field": "hwuser",
+          "varname": "hwuser",
+          "savevartype": "temp",
+          "vartype": "User"
+        },
+        {
+          "name": "Get hws",
+          "category": "User Data",
+          "type": "Get User Data",
+          "messageActionRows": [],
+          "user": "${tempVars.user.id}",
+          "field": "hw",
+          "varname": "hwuser",
+          "savevartype": "temp",
+          "vartype": "User"
+        },
+        {
+          "name": "Edit test",
+          "category": "Variable",
+          "type": "Edit Variable",
+          "messageActionRows": [],
+          "varname": "tempVars.hwuser",
+          "savevartype": "temp",
+          "oper": "+",
+          "value": "${tempVars.amount}"
+        },
+        {
+          "name": "Check_1",
+          "category": "User Data",
+          "type": "Check User Data",
+          "trueActions": [
+            {
+              "name": "Edit_1",
+              "category": "User Data",
+              "type": "Edit User Data",
+              "messageActionRows": [],
+              "user": "1065941772372557864",
+              "field": "leaderhw",
+              "oper": "+",
+              "value": "${tempVars.amount}"
+            },
+            {
+              "name": "Set",
+              "category": "User Data",
+              "type": "Set User Data",
+              "messageActionRows": [],
+              "user": "1065941772372557864",
+              "field": "leader",
+              "fieldvalue": "<@${tempVars.user.id}>"
+            }
+          ],
+          "falseActions": [],
+          "messageActionRows": [],
+          "user": "1065941772372557864",
+          "field": "leaderhw",
+          "compare": "less than",
+          "value": "${tempVars.hwuser}"
+        }
+      ]
+    },
+    {
+      "name": "ahelp",
+      "actions": [
+        {
+          "name": "Help message_1",
+          "category": "Message",
+          "type": "Send Embed",
+          "fields": [
+            {
+              "name": "$addhw @USER {AMOUNT}",
+              "value": "Adds selected amount of homeworks to mentioned USER.",
+              "inline": "false"
+            },
+            {
+              "name": "$subhw @USER {AMOUNT}",
+              "value": "Substracts selected amount of homeworks from mentioned USER.",
+              "inline": "false"
+            },
+            {
+              "name": "$reset @USER",
+              "value": "Resets number of homeworks sent by a mentioned USER.",
+              "inline": "false"
+            },
+            {
+              "name": "$hwtopreset",
+              "value": "Resets leader in hwtop.",
+              "inline": "false"
+            }
+          ],
+          "messageActionRows": [],
+          "channelname": "${dbsVars.CommandChannel.id}",
+          "color": "299CFF",
+          "title": "Commands description:",
+          "url": "",
+          "authorname": "",
+          "authorimageurl": "",
+          "authorlink": "",
+          "description": "",
+          "thumbnail": "",
+          "image": "",
+          "footer": "1.IT Bot",
+          "timestamp": "BOOL_TRUE@@",
+          "savetovariable": "",
+          "savetovariabletype": "temp"
+        }
+      ]
+    },
+    {
+      "name": "addrole",
+      "actions": [
+        {
+          "name": "Get UsEr",
+          "category": "Variable",
+          "type": "Get Mentioned User",
+          "messageActionRows": [],
+          "varname": "UsEr",
+          "vartype": "User",
+          "savevartype": "temp"
+        },
+        {
+          "name": "ADD role",
+          "category": "User Action",
+          "type": "Add Role to User",
+          "messageActionRows": [],
+          "user": "${tempVars.UsEr.id}",
+          "rolename": "1065980383763628071"
+        }
+      ]
+    }
+  ]
+}

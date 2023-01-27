@@ -1,0 +1,1531 @@
+{
+  "command": [
+    {
+      "name": "User Joins Server",
+      "perms": [],
+      "actions": [
+        {
+          "name": "Set User HW",
+          "category": "User Data",
+          "type": "Set User Data",
+          "messageActionRows": [],
+          "user": "${tempVars.newuser.id}",
+          "field": "hw",
+          "fieldvalue": "0"
+        }
+      ],
+      "var": {
+        "user": "newuser"
+      }
+    },
+    {
+      "name": "Any Message",
+      "perms": [],
+      "actions": [
+        {
+          "name": "Check if 1",
+          "category": "Message",
+          "type": "Check If Message Is In Channel",
+          "trueActions": [
+            {
+              "name": "Add 1 hw",
+              "category": "User Data",
+              "type": "Edit User Data",
+              "messageActionRows": [],
+              "user": "${tempVars.anymessagemember.id}",
+              "field": "hw",
+              "oper": "+",
+              "value": "1"
+            },
+            {
+              "name": "Get HWs",
+              "category": "User Data",
+              "type": "Get User Data",
+              "messageActionRows": [],
+              "user": "${tempVars.anymessagemember.id}",
+              "field": "hw",
+              "varname": "hw",
+              "savevartype": "temp",
+              "vartype": "User"
+            },
+            {
+              "name": "Check HWs",
+              "category": "User Data",
+              "type": "Check User Data",
+              "trueActions": [
+                {
+                  "name": "Set Data",
+                  "category": "User Data",
+                  "type": "Set User Data",
+                  "messageActionRows": [],
+                  "user": "1065941772372557864",
+                  "field": "leader",
+                  "fieldvalue": "<@${tempVars.anymessagemember.id}>"
+                },
+                {
+                  "name": "Set Data_1",
+                  "category": "User Data",
+                  "type": "Set User Data",
+                  "messageActionRows": [],
+                  "user": "1065941772372557864",
+                  "field": "leaderhw",
+                  "fieldvalue": "${tempVars.hw}"
+                },
+                {
+                  "name": "Equal",
+                  "category": "User Data",
+                  "type": "Set User Data",
+                  "messageActionRows": [],
+                  "user": "1065941772372557864",
+                  "field": "equal",
+                  "fieldvalue": "0"
+                }
+              ],
+              "falseActions": [
+                {
+                  "name": "Check 69",
+                  "category": "User Data",
+                  "type": "Check User Data",
+                  "trueActions": [
+                    {
+                      "name": "Is equal",
+                      "category": "User Data",
+                      "type": "Set User Data",
+                      "messageActionRows": [],
+                      "user": "1065941772372557864",
+                      "field": "equal",
+                      "fieldvalue": "1"
+                    },
+                    {
+                      "name": "Is equal_1",
+                      "category": "User Data",
+                      "type": "Set User Data",
+                      "messageActionRows": [],
+                      "user": "1065941772372557864",
+                      "field": "leader2",
+                      "fieldvalue": "<@${tempVars.anymessagemember.id}>"
+                    }
+                  ],
+                  "falseActions": [],
+                  "messageActionRows": [],
+                  "user": "1065941772372557864",
+                  "field": "leaderhw",
+                  "compare": "equal to",
+                  "value": "${tempVars.hw}"
+                }
+              ],
+              "messageActionRows": [],
+              "user": "1065941772372557864",
+              "field": "leaderhw",
+              "compare": "less than",
+              "value": "${tempVars.hw}"
+            }
+          ],
+          "falseActions": [
+            {
+              "name": "Check 2",
+              "category": "Message",
+              "type": "Check If Message Is In Channel",
+              "trueActions": [
+                {
+                  "name": "Add 1 hw",
+                  "category": "User Data",
+                  "type": "Edit User Data",
+                  "messageActionRows": [],
+                  "user": "${tempVars.anymessagemember.id}",
+                  "field": "hw",
+                  "oper": "+",
+                  "value": "1"
+                },
+                {
+                  "name": "Get HWs",
+                  "category": "User Data",
+                  "type": "Get User Data",
+                  "messageActionRows": [],
+                  "user": "${tempVars.anymessagemember.id}",
+                  "field": "hw",
+                  "varname": "hw",
+                  "savevartype": "temp",
+                  "vartype": "User"
+                },
+                {
+                  "name": "Check HWs",
+                  "category": "User Data",
+                  "type": "Check User Data",
+                  "trueActions": [
+                    {
+                      "name": "Set Data",
+                      "category": "User Data",
+                      "type": "Set User Data",
+                      "messageActionRows": [],
+                      "user": "1065941772372557864",
+                      "field": "leader",
+                      "fieldvalue": "<@${tempVars.anymessagemember.id}>"
+                    },
+                    {
+                      "name": "Set Data_1",
+                      "category": "User Data",
+                      "type": "Set User Data",
+                      "messageActionRows": [],
+                      "user": "1065941772372557864",
+                      "field": "leaderhw",
+                      "fieldvalue": "${tempVars.hw}"
+                    },
+                    {
+                      "name": "Equal",
+                      "category": "User Data",
+                      "type": "Set User Data",
+                      "messageActionRows": [],
+                      "user": "1065941772372557864",
+                      "field": "equal",
+                      "fieldvalue": "0"
+                    }
+                  ],
+                  "falseActions": [
+                    {
+                      "name": "Check 69",
+                      "category": "User Data",
+                      "type": "Check User Data",
+                      "trueActions": [
+                        {
+                          "name": "Is equal",
+                          "category": "User Data",
+                          "type": "Set User Data",
+                          "messageActionRows": [],
+                          "user": "1065941772372557864",
+                          "field": "equal",
+                          "fieldvalue": "1"
+                        },
+                        {
+                          "name": "Is equal_1",
+                          "category": "User Data",
+                          "type": "Set User Data",
+                          "messageActionRows": [],
+                          "user": "1065941772372557864",
+                          "field": "leader2",
+                          "fieldvalue": "<@${tempVars.anymessagemember.id}>"
+                        }
+                      ],
+                      "falseActions": [],
+                      "messageActionRows": [],
+                      "user": "1065941772372557864",
+                      "field": "leaderhw",
+                      "compare": "equal to",
+                      "value": "${tempVars.hw}"
+                    }
+                  ],
+                  "messageActionRows": [],
+                  "user": "1065941772372557864",
+                  "field": "leaderhw",
+                  "compare": "less than",
+                  "value": "${tempVars.hw}"
+                }
+              ],
+              "falseActions": [
+                {
+                  "name": "Check 2_1",
+                  "category": "Message",
+                  "type": "Check If Message Is In Channel",
+                  "trueActions": [
+                    {
+                      "name": "Add 1 hw",
+                      "category": "User Data",
+                      "type": "Edit User Data",
+                      "messageActionRows": [],
+                      "user": "${tempVars.anymessagemember.id}",
+                      "field": "hw",
+                      "oper": "+",
+                      "value": "1"
+                    },
+                    {
+                      "name": "Get HWs",
+                      "category": "User Data",
+                      "type": "Get User Data",
+                      "messageActionRows": [],
+                      "user": "${tempVars.anymessagemember.id}",
+                      "field": "hw",
+                      "varname": "hw",
+                      "savevartype": "temp",
+                      "vartype": "User"
+                    },
+                    {
+                      "name": "Check HWs",
+                      "category": "User Data",
+                      "type": "Check User Data",
+                      "trueActions": [
+                        {
+                          "name": "Set Data",
+                          "category": "User Data",
+                          "type": "Set User Data",
+                          "messageActionRows": [],
+                          "user": "1065941772372557864",
+                          "field": "leader",
+                          "fieldvalue": "<@${tempVars.anymessagemember.id}>"
+                        },
+                        {
+                          "name": "Set Data_1",
+                          "category": "User Data",
+                          "type": "Set User Data",
+                          "messageActionRows": [],
+                          "user": "1065941772372557864",
+                          "field": "leaderhw",
+                          "fieldvalue": "${tempVars.hw}"
+                        },
+                        {
+                          "name": "Equal",
+                          "category": "User Data",
+                          "type": "Set User Data",
+                          "messageActionRows": [],
+                          "user": "1065941772372557864",
+                          "field": "equal",
+                          "fieldvalue": "0"
+                        }
+                      ],
+                      "falseActions": [
+                        {
+                          "name": "Check 69",
+                          "category": "User Data",
+                          "type": "Check User Data",
+                          "trueActions": [
+                            {
+                              "name": "Is equal",
+                              "category": "User Data",
+                              "type": "Set User Data",
+                              "messageActionRows": [],
+                              "user": "1065941772372557864",
+                              "field": "equal",
+                              "fieldvalue": "1"
+                            },
+                            {
+                              "name": "Is equal_1",
+                              "category": "User Data",
+                              "type": "Set User Data",
+                              "messageActionRows": [],
+                              "user": "1065941772372557864",
+                              "field": "leader2",
+                              "fieldvalue": "<@${tempVars.anymessagemember.id}>"
+                            }
+                          ],
+                          "falseActions": [],
+                          "messageActionRows": [],
+                          "user": "1065941772372557864",
+                          "field": "leaderhw",
+                          "compare": "equal to",
+                          "value": "${tempVars.hw}"
+                        }
+                      ],
+                      "messageActionRows": [],
+                      "user": "1065941772372557864",
+                      "field": "leaderhw",
+                      "compare": "less than",
+                      "value": "${tempVars.hw}"
+                    }
+                  ],
+                  "falseActions": [
+                    {
+                      "name": "Check 2_2",
+                      "category": "Message",
+                      "type": "Check If Message Is In Channel",
+                      "trueActions": [
+                        {
+                          "name": "Add 1 hw",
+                          "category": "User Data",
+                          "type": "Edit User Data",
+                          "messageActionRows": [],
+                          "user": "${tempVars.anymessagemember.id}",
+                          "field": "hw",
+                          "oper": "+",
+                          "value": "1"
+                        },
+                        {
+                          "name": "Get HWs",
+                          "category": "User Data",
+                          "type": "Get User Data",
+                          "messageActionRows": [],
+                          "user": "${tempVars.anymessagemember.id}",
+                          "field": "hw",
+                          "varname": "hw",
+                          "savevartype": "temp",
+                          "vartype": "User"
+                        },
+                        {
+                          "name": "Check HWs",
+                          "category": "User Data",
+                          "type": "Check User Data",
+                          "trueActions": [
+                            {
+                              "name": "Set Data",
+                              "category": "User Data",
+                              "type": "Set User Data",
+                              "messageActionRows": [],
+                              "user": "1065941772372557864",
+                              "field": "leader",
+                              "fieldvalue": "<@${tempVars.anymessagemember.id}>"
+                            },
+                            {
+                              "name": "Set Data_1",
+                              "category": "User Data",
+                              "type": "Set User Data",
+                              "messageActionRows": [],
+                              "user": "1065941772372557864",
+                              "field": "leaderhw",
+                              "fieldvalue": "${tempVars.hw}"
+                            },
+                            {
+                              "name": "Equal",
+                              "category": "User Data",
+                              "type": "Set User Data",
+                              "messageActionRows": [],
+                              "user": "1065941772372557864",
+                              "field": "equal",
+                              "fieldvalue": "0"
+                            }
+                          ],
+                          "falseActions": [
+                            {
+                              "name": "Check 69",
+                              "category": "User Data",
+                              "type": "Check User Data",
+                              "trueActions": [
+                                {
+                                  "name": "Is equal",
+                                  "category": "User Data",
+                                  "type": "Set User Data",
+                                  "messageActionRows": [],
+                                  "user": "1065941772372557864",
+                                  "field": "equal",
+                                  "fieldvalue": "1"
+                                },
+                                {
+                                  "name": "Is equal_1",
+                                  "category": "User Data",
+                                  "type": "Set User Data",
+                                  "messageActionRows": [],
+                                  "user": "1065941772372557864",
+                                  "field": "leader2",
+                                  "fieldvalue": "<@${tempVars.anymessagemember.id}>"
+                                }
+                              ],
+                              "falseActions": [],
+                              "messageActionRows": [],
+                              "user": "1065941772372557864",
+                              "field": "leaderhw",
+                              "compare": "equal to",
+                              "value": "${tempVars.hw}"
+                            }
+                          ],
+                          "messageActionRows": [],
+                          "user": "1065941772372557864",
+                          "field": "leaderhw",
+                          "compare": "less than",
+                          "value": "${tempVars.hw}"
+                        }
+                      ],
+                      "falseActions": [
+                        {
+                          "name": "Check 2_3",
+                          "category": "Message",
+                          "type": "Check If Message Is In Channel",
+                          "trueActions": [
+                            {
+                              "name": "Add 1 hw",
+                              "category": "User Data",
+                              "type": "Edit User Data",
+                              "messageActionRows": [],
+                              "user": "${tempVars.anymessagemember.id}",
+                              "field": "hw",
+                              "oper": "+",
+                              "value": "1"
+                            },
+                            {
+                              "name": "Get HWs",
+                              "category": "User Data",
+                              "type": "Get User Data",
+                              "messageActionRows": [],
+                              "user": "${tempVars.anymessagemember.id}",
+                              "field": "hw",
+                              "varname": "hw",
+                              "savevartype": "temp",
+                              "vartype": "User"
+                            },
+                            {
+                              "name": "Check HWs",
+                              "category": "User Data",
+                              "type": "Check User Data",
+                              "trueActions": [
+                                {
+                                  "name": "Set Data",
+                                  "category": "User Data",
+                                  "type": "Set User Data",
+                                  "messageActionRows": [],
+                                  "user": "1065941772372557864",
+                                  "field": "leader",
+                                  "fieldvalue": "<@${tempVars.anymessagemember.id}>"
+                                },
+                                {
+                                  "name": "Set Data_1",
+                                  "category": "User Data",
+                                  "type": "Set User Data",
+                                  "messageActionRows": [],
+                                  "user": "1065941772372557864",
+                                  "field": "leaderhw",
+                                  "fieldvalue": "${tempVars.hw}"
+                                },
+                                {
+                                  "name": "Equal",
+                                  "category": "User Data",
+                                  "type": "Set User Data",
+                                  "messageActionRows": [],
+                                  "user": "1065941772372557864",
+                                  "field": "equal",
+                                  "fieldvalue": "0"
+                                }
+                              ],
+                              "falseActions": [
+                                {
+                                  "name": "Check 69",
+                                  "category": "User Data",
+                                  "type": "Check User Data",
+                                  "trueActions": [
+                                    {
+                                      "name": "Is equal",
+                                      "category": "User Data",
+                                      "type": "Set User Data",
+                                      "messageActionRows": [],
+                                      "user": "1065941772372557864",
+                                      "field": "equal",
+                                      "fieldvalue": "1"
+                                    },
+                                    {
+                                      "name": "Is equal_1",
+                                      "category": "User Data",
+                                      "type": "Set User Data",
+                                      "messageActionRows": [],
+                                      "user": "1065941772372557864",
+                                      "field": "leader2",
+                                      "fieldvalue": "<@${tempVars.anymessagemember.id}>"
+                                    }
+                                  ],
+                                  "falseActions": [],
+                                  "messageActionRows": [],
+                                  "user": "1065941772372557864",
+                                  "field": "leaderhw",
+                                  "compare": "equal to",
+                                  "value": "${tempVars.hw}"
+                                }
+                              ],
+                              "messageActionRows": [],
+                              "user": "1065941772372557864",
+                              "field": "leaderhw",
+                              "compare": "less than",
+                              "value": "${tempVars.hw}"
+                            }
+                          ],
+                          "falseActions": [
+                            {
+                              "name": "Check 2_4",
+                              "category": "Message",
+                              "type": "Check If Message Is In Channel",
+                              "trueActions": [
+                                {
+                                  "name": "Add 1 hw",
+                                  "category": "User Data",
+                                  "type": "Edit User Data",
+                                  "messageActionRows": [],
+                                  "user": "${tempVars.anymessagemember.id}",
+                                  "field": "hw",
+                                  "oper": "+",
+                                  "value": "1"
+                                },
+                                {
+                                  "name": "Get HWs",
+                                  "category": "User Data",
+                                  "type": "Get User Data",
+                                  "messageActionRows": [],
+                                  "user": "${tempVars.anymessagemember.id}",
+                                  "field": "hw",
+                                  "varname": "hw",
+                                  "savevartype": "temp",
+                                  "vartype": "User"
+                                },
+                                {
+                                  "name": "Check HWs",
+                                  "category": "User Data",
+                                  "type": "Check User Data",
+                                  "trueActions": [
+                                    {
+                                      "name": "Set Data",
+                                      "category": "User Data",
+                                      "type": "Set User Data",
+                                      "messageActionRows": [],
+                                      "user": "1065941772372557864",
+                                      "field": "leader",
+                                      "fieldvalue": "<@${tempVars.anymessagemember.id}>"
+                                    },
+                                    {
+                                      "name": "Set Data_1",
+                                      "category": "User Data",
+                                      "type": "Set User Data",
+                                      "messageActionRows": [],
+                                      "user": "1065941772372557864",
+                                      "field": "leaderhw",
+                                      "fieldvalue": "${tempVars.hw}"
+                                    },
+                                    {
+                                      "name": "Equal",
+                                      "category": "User Data",
+                                      "type": "Set User Data",
+                                      "messageActionRows": [],
+                                      "user": "1065941772372557864",
+                                      "field": "equal",
+                                      "fieldvalue": "0"
+                                    }
+                                  ],
+                                  "falseActions": [
+                                    {
+                                      "name": "Check 69",
+                                      "category": "User Data",
+                                      "type": "Check User Data",
+                                      "trueActions": [
+                                        {
+                                          "name": "Is equal",
+                                          "category": "User Data",
+                                          "type": "Set User Data",
+                                          "messageActionRows": [],
+                                          "user": "1065941772372557864",
+                                          "field": "equal",
+                                          "fieldvalue": "1"
+                                        },
+                                        {
+                                          "name": "Is equal_1",
+                                          "category": "User Data",
+                                          "type": "Set User Data",
+                                          "messageActionRows": [],
+                                          "user": "1065941772372557864",
+                                          "field": "leader2",
+                                          "fieldvalue": "<@${tempVars.anymessagemember.id}>"
+                                        }
+                                      ],
+                                      "falseActions": [],
+                                      "messageActionRows": [],
+                                      "user": "1065941772372557864",
+                                      "field": "leaderhw",
+                                      "compare": "equal to",
+                                      "value": "${tempVars.hw}"
+                                    }
+                                  ],
+                                  "messageActionRows": [],
+                                  "user": "1065941772372557864",
+                                  "field": "leaderhw",
+                                  "compare": "less than",
+                                  "value": "${tempVars.hw}"
+                                }
+                              ],
+                              "falseActions": [
+                                {
+                                  "name": "Check 2_5",
+                                  "category": "Message",
+                                  "type": "Check If Message Is In Channel",
+                                  "trueActions": [
+                                    {
+                                      "name": "Add 1 hw",
+                                      "category": "User Data",
+                                      "type": "Edit User Data",
+                                      "messageActionRows": [],
+                                      "user": "${tempVars.anymessagemember.id}",
+                                      "field": "hw",
+                                      "oper": "+",
+                                      "value": "1"
+                                    },
+                                    {
+                                      "name": "Get HWs",
+                                      "category": "User Data",
+                                      "type": "Get User Data",
+                                      "messageActionRows": [],
+                                      "user": "${tempVars.anymessagemember.id}",
+                                      "field": "hw",
+                                      "varname": "hw",
+                                      "savevartype": "temp",
+                                      "vartype": "User"
+                                    },
+                                    {
+                                      "name": "Check HWs",
+                                      "category": "User Data",
+                                      "type": "Check User Data",
+                                      "trueActions": [
+                                        {
+                                          "name": "Set Data",
+                                          "category": "User Data",
+                                          "type": "Set User Data",
+                                          "messageActionRows": [],
+                                          "user": "1065941772372557864",
+                                          "field": "leader",
+                                          "fieldvalue": "<@${tempVars.anymessagemember.id}>"
+                                        },
+                                        {
+                                          "name": "Set Data_1",
+                                          "category": "User Data",
+                                          "type": "Set User Data",
+                                          "messageActionRows": [],
+                                          "user": "1065941772372557864",
+                                          "field": "leaderhw",
+                                          "fieldvalue": "${tempVars.hw}"
+                                        },
+                                        {
+                                          "name": "Equal",
+                                          "category": "User Data",
+                                          "type": "Set User Data",
+                                          "messageActionRows": [],
+                                          "user": "1065941772372557864",
+                                          "field": "equal",
+                                          "fieldvalue": "0"
+                                        }
+                                      ],
+                                      "falseActions": [
+                                        {
+                                          "name": "Check 69",
+                                          "category": "User Data",
+                                          "type": "Check User Data",
+                                          "trueActions": [
+                                            {
+                                              "name": "Is equal",
+                                              "category": "User Data",
+                                              "type": "Set User Data",
+                                              "messageActionRows": [],
+                                              "user": "1065941772372557864",
+                                              "field": "equal",
+                                              "fieldvalue": "1"
+                                            },
+                                            {
+                                              "name": "Is equal_1",
+                                              "category": "User Data",
+                                              "type": "Set User Data",
+                                              "messageActionRows": [],
+                                              "user": "1065941772372557864",
+                                              "field": "leader2",
+                                              "fieldvalue": "<@${tempVars.anymessagemember.id}>"
+                                            }
+                                          ],
+                                          "falseActions": [],
+                                          "messageActionRows": [],
+                                          "user": "1065941772372557864",
+                                          "field": "leaderhw",
+                                          "compare": "equal to",
+                                          "value": "${tempVars.hw}"
+                                        }
+                                      ],
+                                      "messageActionRows": [],
+                                      "user": "1065941772372557864",
+                                      "field": "leaderhw",
+                                      "compare": "less than",
+                                      "value": "${tempVars.hw}"
+                                    }
+                                  ],
+                                  "falseActions": [
+                                    {
+                                      "name": "Check 2_6",
+                                      "category": "Message",
+                                      "type": "Check If Message Is In Channel",
+                                      "trueActions": [
+                                        {
+                                          "name": "Add 1 hw",
+                                          "category": "User Data",
+                                          "type": "Edit User Data",
+                                          "messageActionRows": [],
+                                          "user": "${tempVars.anymessagemember.id}",
+                                          "field": "hw",
+                                          "oper": "+",
+                                          "value": "1"
+                                        },
+                                        {
+                                          "name": "Get HWs",
+                                          "category": "User Data",
+                                          "type": "Get User Data",
+                                          "messageActionRows": [],
+                                          "user": "${tempVars.anymessagemember.id}",
+                                          "field": "hw",
+                                          "varname": "hw",
+                                          "savevartype": "temp",
+                                          "vartype": "User"
+                                        },
+                                        {
+                                          "name": "Check HWs",
+                                          "category": "User Data",
+                                          "type": "Check User Data",
+                                          "trueActions": [
+                                            {
+                                              "name": "Set Data",
+                                              "category": "User Data",
+                                              "type": "Set User Data",
+                                              "messageActionRows": [],
+                                              "user": "1065941772372557864",
+                                              "field": "leader",
+                                              "fieldvalue": "<@${tempVars.anymessagemember.id}>"
+                                            },
+                                            {
+                                              "name": "Set Data_1",
+                                              "category": "User Data",
+                                              "type": "Set User Data",
+                                              "messageActionRows": [],
+                                              "user": "1065941772372557864",
+                                              "field": "leaderhw",
+                                              "fieldvalue": "${tempVars.hw}"
+                                            },
+                                            {
+                                              "name": "Equal",
+                                              "category": "User Data",
+                                              "type": "Set User Data",
+                                              "messageActionRows": [],
+                                              "user": "1065941772372557864",
+                                              "field": "equal",
+                                              "fieldvalue": "0"
+                                            }
+                                          ],
+                                          "falseActions": [
+                                            {
+                                              "name": "Check 69",
+                                              "category": "User Data",
+                                              "type": "Check User Data",
+                                              "trueActions": [
+                                                {
+                                                  "name": "Is equal",
+                                                  "category": "User Data",
+                                                  "type": "Set User Data",
+                                                  "messageActionRows": [],
+                                                  "user": "1065941772372557864",
+                                                  "field": "equal",
+                                                  "fieldvalue": "1"
+                                                },
+                                                {
+                                                  "name": "Is equal_1",
+                                                  "category": "User Data",
+                                                  "type": "Set User Data",
+                                                  "messageActionRows": [],
+                                                  "user": "1065941772372557864",
+                                                  "field": "leader2",
+                                                  "fieldvalue": "<@${tempVars.anymessagemember.id}>"
+                                                }
+                                              ],
+                                              "falseActions": [],
+                                              "messageActionRows": [],
+                                              "user": "1065941772372557864",
+                                              "field": "leaderhw",
+                                              "compare": "equal to",
+                                              "value": "${tempVars.hw}"
+                                            }
+                                          ],
+                                          "messageActionRows": [],
+                                          "user": "1065941772372557864",
+                                          "field": "leaderhw",
+                                          "compare": "less than",
+                                          "value": "${tempVars.hw}"
+                                        }
+                                      ],
+                                      "falseActions": [
+                                        {
+                                          "name": "Check 2_6_1",
+                                          "category": "Message",
+                                          "type": "Check If Message Is In Channel",
+                                          "trueActions": [
+                                            {
+                                              "name": "Add 1 hw",
+                                              "category": "User Data",
+                                              "type": "Edit User Data",
+                                              "messageActionRows": [],
+                                              "user": "${tempVars.anymessagemember.id}",
+                                              "field": "hw",
+                                              "oper": "+",
+                                              "value": "1"
+                                            },
+                                            {
+                                              "name": "Get HWs",
+                                              "category": "User Data",
+                                              "type": "Get User Data",
+                                              "messageActionRows": [],
+                                              "user": "${tempVars.anymessagemember.id}",
+                                              "field": "hw",
+                                              "varname": "hw",
+                                              "savevartype": "temp",
+                                              "vartype": "User"
+                                            },
+                                            {
+                                              "name": "Check HWs",
+                                              "category": "User Data",
+                                              "type": "Check User Data",
+                                              "trueActions": [
+                                                {
+                                                  "name": "Set Data",
+                                                  "category": "User Data",
+                                                  "type": "Set User Data",
+                                                  "messageActionRows": [],
+                                                  "user": "1065941772372557864",
+                                                  "field": "leader",
+                                                  "fieldvalue": "<@${tempVars.anymessagemember.id}>"
+                                                },
+                                                {
+                                                  "name": "Set Data_1",
+                                                  "category": "User Data",
+                                                  "type": "Set User Data",
+                                                  "messageActionRows": [],
+                                                  "user": "1065941772372557864",
+                                                  "field": "leaderhw",
+                                                  "fieldvalue": "${tempVars.hw}"
+                                                },
+                                                {
+                                                  "name": "Equal",
+                                                  "category": "User Data",
+                                                  "type": "Set User Data",
+                                                  "messageActionRows": [],
+                                                  "user": "1065941772372557864",
+                                                  "field": "equal",
+                                                  "fieldvalue": "0"
+                                                }
+                                              ],
+                                              "falseActions": [
+                                                {
+                                                  "name": "Check 69",
+                                                  "category": "User Data",
+                                                  "type": "Check User Data",
+                                                  "trueActions": [
+                                                    {
+                                                      "name": "Is equal",
+                                                      "category": "User Data",
+                                                      "type": "Set User Data",
+                                                      "messageActionRows": [],
+                                                      "user": "1065941772372557864",
+                                                      "field": "equal",
+                                                      "fieldvalue": "1"
+                                                    },
+                                                    {
+                                                      "name": "Is equal_1",
+                                                      "category": "User Data",
+                                                      "type": "Set User Data",
+                                                      "messageActionRows": [],
+                                                      "user": "1065941772372557864",
+                                                      "field": "leader2",
+                                                      "fieldvalue": "<@${tempVars.anymessagemember.id}>"
+                                                    }
+                                                  ],
+                                                  "falseActions": [],
+                                                  "messageActionRows": [],
+                                                  "user": "1065941772372557864",
+                                                  "field": "leaderhw",
+                                                  "compare": "equal to",
+                                                  "value": "${tempVars.hw}"
+                                                }
+                                              ],
+                                              "messageActionRows": [],
+                                              "user": "1065941772372557864",
+                                              "field": "leaderhw",
+                                              "compare": "less than",
+                                              "value": "${tempVars.hw}"
+                                            }
+                                          ],
+                                          "falseActions": [
+                                            {
+                                              "name": "Check 2_6_2",
+                                              "category": "Message",
+                                              "type": "Check If Message Is In Channel",
+                                              "trueActions": [
+                                                {
+                                                  "name": "Add 1 hw",
+                                                  "category": "User Data",
+                                                  "type": "Edit User Data",
+                                                  "messageActionRows": [],
+                                                  "user": "${tempVars.anymessagemember.id}",
+                                                  "field": "hw",
+                                                  "oper": "+",
+                                                  "value": "1"
+                                                },
+                                                {
+                                                  "name": "Get HWs",
+                                                  "category": "User Data",
+                                                  "type": "Get User Data",
+                                                  "messageActionRows": [],
+                                                  "user": "${tempVars.anymessagemember.id}",
+                                                  "field": "hw",
+                                                  "varname": "hw",
+                                                  "savevartype": "temp",
+                                                  "vartype": "User"
+                                                },
+                                                {
+                                                  "name": "Check HWs",
+                                                  "category": "User Data",
+                                                  "type": "Check User Data",
+                                                  "trueActions": [
+                                                    {
+                                                      "name": "Set Data",
+                                                      "category": "User Data",
+                                                      "type": "Set User Data",
+                                                      "messageActionRows": [],
+                                                      "user": "1065941772372557864",
+                                                      "field": "leader",
+                                                      "fieldvalue": "<@${tempVars.anymessagemember.id}>"
+                                                    },
+                                                    {
+                                                      "name": "Set Data_1",
+                                                      "category": "User Data",
+                                                      "type": "Set User Data",
+                                                      "messageActionRows": [],
+                                                      "user": "1065941772372557864",
+                                                      "field": "leaderhw",
+                                                      "fieldvalue": "${tempVars.hw}"
+                                                    },
+                                                    {
+                                                      "name": "Equal",
+                                                      "category": "User Data",
+                                                      "type": "Set User Data",
+                                                      "messageActionRows": [],
+                                                      "user": "1065941772372557864",
+                                                      "field": "equal",
+                                                      "fieldvalue": "0"
+                                                    }
+                                                  ],
+                                                  "falseActions": [
+                                                    {
+                                                      "name": "Check 69",
+                                                      "category": "User Data",
+                                                      "type": "Check User Data",
+                                                      "trueActions": [
+                                                        {
+                                                          "name": "Is equal",
+                                                          "category": "User Data",
+                                                          "type": "Set User Data",
+                                                          "messageActionRows": [],
+                                                          "user": "1065941772372557864",
+                                                          "field": "equal",
+                                                          "fieldvalue": "1"
+                                                        },
+                                                        {
+                                                          "name": "Is equal_1",
+                                                          "category": "User Data",
+                                                          "type": "Set User Data",
+                                                          "messageActionRows": [],
+                                                          "user": "1065941772372557864",
+                                                          "field": "leader2",
+                                                          "fieldvalue": "<@${tempVars.anymessagemember.id}>"
+                                                        }
+                                                      ],
+                                                      "falseActions": [],
+                                                      "messageActionRows": [],
+                                                      "user": "1065941772372557864",
+                                                      "field": "leaderhw",
+                                                      "compare": "equal to",
+                                                      "value": "${tempVars.hw}"
+                                                    }
+                                                  ],
+                                                  "messageActionRows": [],
+                                                  "user": "1065941772372557864",
+                                                  "field": "leaderhw",
+                                                  "compare": "less than",
+                                                  "value": "${tempVars.hw}"
+                                                }
+                                              ],
+                                              "falseActions": [
+                                                {
+                                                  "name": "Check 2_6_3",
+                                                  "category": "Message",
+                                                  "type": "Check If Message Is In Channel",
+                                                  "trueActions": [
+                                                    {
+                                                      "name": "Add 1 hw",
+                                                      "category": "User Data",
+                                                      "type": "Edit User Data",
+                                                      "messageActionRows": [],
+                                                      "user": "${tempVars.anymessagemember.id}",
+                                                      "field": "hw",
+                                                      "oper": "+",
+                                                      "value": "1"
+                                                    },
+                                                    {
+                                                      "name": "Get HWs",
+                                                      "category": "User Data",
+                                                      "type": "Get User Data",
+                                                      "messageActionRows": [],
+                                                      "user": "${tempVars.anymessagemember.id}",
+                                                      "field": "hw",
+                                                      "varname": "hw",
+                                                      "savevartype": "temp",
+                                                      "vartype": "User"
+                                                    },
+                                                    {
+                                                      "name": "Check HWs",
+                                                      "category": "User Data",
+                                                      "type": "Check User Data",
+                                                      "trueActions": [
+                                                        {
+                                                          "name": "Set Data",
+                                                          "category": "User Data",
+                                                          "type": "Set User Data",
+                                                          "messageActionRows": [],
+                                                          "user": "1065941772372557864",
+                                                          "field": "leader",
+                                                          "fieldvalue": "<@${tempVars.anymessagemember.id}>"
+                                                        },
+                                                        {
+                                                          "name": "Set Data_1",
+                                                          "category": "User Data",
+                                                          "type": "Set User Data",
+                                                          "messageActionRows": [],
+                                                          "user": "1065941772372557864",
+                                                          "field": "leaderhw",
+                                                          "fieldvalue": "${tempVars.hw}"
+                                                        },
+                                                        {
+                                                          "name": "Equal",
+                                                          "category": "User Data",
+                                                          "type": "Set User Data",
+                                                          "messageActionRows": [],
+                                                          "user": "1065941772372557864",
+                                                          "field": "equal",
+                                                          "fieldvalue": "0"
+                                                        }
+                                                      ],
+                                                      "falseActions": [
+                                                        {
+                                                          "name": "Check 69",
+                                                          "category": "User Data",
+                                                          "type": "Check User Data",
+                                                          "trueActions": [
+                                                            {
+                                                              "name": "Is equal",
+                                                              "category": "User Data",
+                                                              "type": "Set User Data",
+                                                              "messageActionRows": [],
+                                                              "user": "1065941772372557864",
+                                                              "field": "equal",
+                                                              "fieldvalue": "1"
+                                                            },
+                                                            {
+                                                              "name": "Is equal_1",
+                                                              "category": "User Data",
+                                                              "type": "Set User Data",
+                                                              "messageActionRows": [],
+                                                              "user": "1065941772372557864",
+                                                              "field": "leader2",
+                                                              "fieldvalue": "<@${tempVars.anymessagemember.id}>"
+                                                            }
+                                                          ],
+                                                          "falseActions": [],
+                                                          "messageActionRows": [],
+                                                          "user": "1065941772372557864",
+                                                          "field": "leaderhw",
+                                                          "compare": "equal to",
+                                                          "value": "${tempVars.hw}"
+                                                        }
+                                                      ],
+                                                      "messageActionRows": [],
+                                                      "user": "1065941772372557864",
+                                                      "field": "leaderhw",
+                                                      "compare": "less than",
+                                                      "value": "${tempVars.hw}"
+                                                    }
+                                                  ],
+                                                  "falseActions": [
+                                                    {
+                                                      "name": "Check 2_6_4",
+                                                      "category": "Message",
+                                                      "type": "Check If Message Is In Channel",
+                                                      "trueActions": [
+                                                        {
+                                                          "name": "Add 1 hw",
+                                                          "category": "User Data",
+                                                          "type": "Edit User Data",
+                                                          "messageActionRows": [],
+                                                          "user": "${tempVars.anymessagemember.id}",
+                                                          "field": "hw",
+                                                          "oper": "+",
+                                                          "value": "1"
+                                                        },
+                                                        {
+                                                          "name": "Get HWs",
+                                                          "category": "User Data",
+                                                          "type": "Get User Data",
+                                                          "messageActionRows": [],
+                                                          "user": "${tempVars.anymessagemember.id}",
+                                                          "field": "hw",
+                                                          "varname": "hw",
+                                                          "savevartype": "temp",
+                                                          "vartype": "User"
+                                                        },
+                                                        {
+                                                          "name": "Check HWs",
+                                                          "category": "User Data",
+                                                          "type": "Check User Data",
+                                                          "trueActions": [
+                                                            {
+                                                              "name": "Set Data",
+                                                              "category": "User Data",
+                                                              "type": "Set User Data",
+                                                              "messageActionRows": [],
+                                                              "user": "1065941772372557864",
+                                                              "field": "leader",
+                                                              "fieldvalue": "<@${tempVars.anymessagemember.id}>"
+                                                            },
+                                                            {
+                                                              "name": "Set Data_1",
+                                                              "category": "User Data",
+                                                              "type": "Set User Data",
+                                                              "messageActionRows": [],
+                                                              "user": "1065941772372557864",
+                                                              "field": "leaderhw",
+                                                              "fieldvalue": "${tempVars.hw}"
+                                                            },
+                                                            {
+                                                              "name": "Equal",
+                                                              "category": "User Data",
+                                                              "type": "Set User Data",
+                                                              "messageActionRows": [],
+                                                              "user": "1065941772372557864",
+                                                              "field": "equal",
+                                                              "fieldvalue": "0"
+                                                            }
+                                                          ],
+                                                          "falseActions": [
+                                                            {
+                                                              "name": "Check 69",
+                                                              "category": "User Data",
+                                                              "type": "Check User Data",
+                                                              "trueActions": [
+                                                                {
+                                                                  "name": "Is equal",
+                                                                  "category": "User Data",
+                                                                  "type": "Set User Data",
+                                                                  "messageActionRows": [],
+                                                                  "user": "1065941772372557864",
+                                                                  "field": "equal",
+                                                                  "fieldvalue": "1"
+                                                                },
+                                                                {
+                                                                  "name": "Is equal_1",
+                                                                  "category": "User Data",
+                                                                  "type": "Set User Data",
+                                                                  "messageActionRows": [],
+                                                                  "user": "1065941772372557864",
+                                                                  "field": "leader2",
+                                                                  "fieldvalue": "<@${tempVars.anymessagemember.id}>"
+                                                                }
+                                                              ],
+                                                              "falseActions": [],
+                                                              "messageActionRows": [],
+                                                              "user": "1065941772372557864",
+                                                              "field": "leaderhw",
+                                                              "compare": "equal to",
+                                                              "value": "${tempVars.hw}"
+                                                            }
+                                                          ],
+                                                          "messageActionRows": [],
+                                                          "user": "1065941772372557864",
+                                                          "field": "leaderhw",
+                                                          "compare": "less than",
+                                                          "value": "${tempVars.hw}"
+                                                        }
+                                                      ],
+                                                      "falseActions": [
+                                                        {
+                                                          "name": "Check 2_6_5",
+                                                          "category": "Message",
+                                                          "type": "Check If Message Is In Channel",
+                                                          "trueActions": [],
+                                                          "falseActions": [],
+                                                          "messageActionRows": [],
+                                                          "messageid": "${tempVars.anymessage.id}",
+                                                          "channelname": "1065997960682418256"
+                                                        }
+                                                      ],
+                                                      "messageActionRows": [],
+                                                      "messageid": "${tempVars.anymessage.channel.id}",
+                                                      "channelname": "1065996443371970641"
+                                                    }
+                                                  ],
+                                                  "messageActionRows": [],
+                                                  "messageid": "${tempVars.anymessage.channel.id}",
+                                                  "channelname": "1065993877057708072"
+                                                }
+                                              ],
+                                              "messageActionRows": [],
+                                              "messageid": "${tempVars.anymessage.channel.id}",
+                                              "channelname": "1065993842093981696"
+                                            }
+                                          ],
+                                          "messageActionRows": [],
+                                          "messageid": "${tempVars.anymessage.channel.id}",
+                                          "channelname": "1065993809323896852"
+                                        }
+                                      ],
+                                      "messageActionRows": [],
+                                      "messageid": "${tempVars.anymessage.channel.id}",
+                                      "channelname": "1065993779351404544"
+                                    }
+                                  ],
+                                  "messageActionRows": [],
+                                  "messageid": "${tempVars.anymessage.channel.id}",
+                                  "channelname": "1065987281585967204"
+                                }
+                              ],
+                              "messageActionRows": [],
+                              "messageid": "${tempVars.anymessage.channel.id}",
+                              "channelname": "1065986814793502781"
+                            }
+                          ],
+                          "messageActionRows": [],
+                          "messageid": "${tempVars.anymessage.channel.id}",
+                          "channelname": "1065980385307148393"
+                        }
+                      ],
+                      "messageActionRows": [],
+                      "messageid": "${tempVars.anymessage.channel.id}",
+                      "channelname": "1065980386183741463"
+                    }
+                  ],
+                  "messageActionRows": [],
+                  "messageid": "${tempVars.anymessage.channel.id}",
+                  "channelname": "1065993991029522562"
+                }
+              ],
+              "messageActionRows": [],
+              "messageid": "${tempVars.anymessage.channel.id}",
+              "channelname": "1065993965347799050"
+            }
+          ],
+          "messageActionRows": [],
+          "messageid": "${tempVars.anymessage.channel.id}",
+          "channelname": "1065980386183741462"
+        }
+      ],
+      "var": {}
+    },
+    {
+      "name": "User Kicked",
+      "perms": [],
+      "actions": [],
+      "var": {
+        "user": "kickuser"
+      }
+    },
+    {
+      "name": "User Banned",
+      "perms": [],
+      "actions": [],
+      "var": {
+        "user": "banuser"
+      }
+    },
+    {
+      "name": "Bot Initialization",
+      "perms": [],
+      "actions": [
+        {
+          "name": "0",
+          "category": "User Data",
+          "type": "Set User Data",
+          "messageActionRows": [],
+          "user": "1065941772372557864",
+          "field": "hwuser",
+          "fieldvalue": "0"
+        }
+      ],
+      "var": {}
+    },
+    {
+      "name": "Channel Create",
+      "perms": [],
+      "actions": [],
+      "var": {
+        "channel": "createdchannel"
+      }
+    },
+    {
+      "name": "Channel Delete",
+      "perms": [],
+      "actions": [],
+      "var": {
+        "channel": "deletedchannel"
+      }
+    },
+    {
+      "name": "Channel Pins Update",
+      "perms": [],
+      "actions": [],
+      "var": {
+        "channel": "updatepinschannel"
+      }
+    },
+    {
+      "name": "Channel Update",
+      "perms": [],
+      "actions": [],
+      "var": {
+        "channel": "updatechannel"
+      }
+    },
+    {
+      "name": "Emoji Create",
+      "perms": [],
+      "actions": [],
+      "var": {
+        "channel": "createdemoji"
+      }
+    },
+    {
+      "name": "Emoji Delete",
+      "perms": [],
+      "actions": [],
+      "var": {
+        "channel": "deletedemoji"
+      }
+    },
+    {
+      "name": "Emoji Update",
+      "perms": [],
+      "actions": [],
+      "var": {
+        "channel": "updatedemoji"
+      }
+    },
+    {
+      "name": "Guild Ban Remove",
+      "perms": [],
+      "actions": [],
+      "var": {
+        "channel": ""
+      }
+    },
+    {
+      "name": "Guild Create",
+      "perms": [],
+      "actions": [],
+      "var": {
+        "channel": ""
+      }
+    },
+    {
+      "name": "Guild Delete",
+      "perms": [],
+      "actions": [],
+      "var": {
+        "channel": ""
+      }
+    },
+    {
+      "name": "Guild Member Available",
+      "perms": [],
+      "actions": [],
+      "var": {
+        "channel": ""
+      }
+    },
+    {
+      "name": "Guild Member Speaking",
+      "perms": [],
+      "actions": [],
+      "var": {
+        "channel": ""
+      }
+    },
+    {
+      "name": "Guild Member Update",
+      "perms": [],
+      "actions": [],
+      "var": {
+        "channel": ""
+      }
+    },
+    {
+      "name": "Guild Unavailable",
+      "perms": [],
+      "actions": [],
+      "var": {
+        "channel": ""
+      }
+    },
+    {
+      "name": "Guild Update",
+      "perms": [],
+      "actions": [],
+      "var": {
+        "channel": ""
+      }
+    },
+    {
+      "name": "Message Delete",
+      "perms": [],
+      "actions": [],
+      "var": {
+        "channel": ""
+      }
+    },
+    {
+      "name": "Message Update",
+      "perms": [],
+      "actions": [],
+      "var": {
+        "channel": ""
+      }
+    },
+    {
+      "name": "Role Create",
+      "perms": [],
+      "actions": [],
+      "var": {
+        "channel": ""
+      }
+    },
+    {
+      "name": "Role Delete",
+      "perms": [],
+      "actions": [],
+      "var": {
+        "channel": ""
+      }
+    },
+    {
+      "name": "Role Update",
+      "perms": [],
+      "actions": [],
+      "var": {
+        "channel": ""
+      }
+    },
+    {
+      "name": "Typing Start",
+      "perms": [],
+      "actions": [],
+      "var": {
+        "channel": ""
+      }
+    },
+    {
+      "name": "User Update",
+      "perms": [],
+      "actions": [],
+      "var": {
+        "channel": ""
+      }
+    },
+    {
+      "name": "Button Interaction",
+      "perms": [],
+      "actions": [],
+      "var": {
+        "channel": ""
+      }
+    },
+    {
+      "name": "Select Interaction",
+      "perms": [],
+      "actions": [],
+      "var": {
+        "channel": ""
+      }
+    },
+    {
+      "name": "Command Interaction",
+      "perms": [],
+      "actions": [],
+      "var": {
+        "channel": ""
+      }
+    }
+  ]
+}
