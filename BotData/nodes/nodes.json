@@ -429,6 +429,8 @@
           "inline": "false"
         }
       ],
+      "saveToVariable": "",
+      "saveToVariableType": "temp",
       "outputs": [
         {
           "label": "next response",
@@ -1855,6 +1857,8 @@
           "inline": "false"
         }
       ],
+      "saveToVariable": "",
+      "saveToVariableType": "temp",
       "outputs": [
         {
           "label": "next response",
@@ -1902,92 +1906,6 @@
         "timestamp",
         "saveToVariable",
         "saveToVariableType"
-      ],
-      "messageActionRows": [],
-      "valueFields": []
-    },
-    {
-      "type": "command",
-      "name": "addrole",
-      "guid": "dbdf521a-3261-43cf-9cf3-534b35f8ff31",
-      "outputs": [
-        {
-          "label": "responses",
-          "connections": [
-            "a734e2c8-b1af-438a-9f23-ca7d3abc81ec"
-          ]
-        }
-      ],
-      "inputs": [],
-      "x": 51,
-      "y": 1176
-    },
-    {
-      "type": "response",
-      "name": "Get UsEr",
-      "guid": "a734e2c8-b1af-438a-9f23-ca7d3abc81ec",
-      "reactionFields": [],
-      "embedfields": [],
-      "outputs": [
-        {
-          "label": "next response",
-          "connections": [
-            "62e0db27-0bd9-4d85-b4bd-2fb66ba3ee30"
-          ]
-        }
-      ],
-      "inputs": [
-        {
-          "label": "trigger",
-          "id": "dbdf521a-3261-43cf-9cf3-534b35f8ff31"
-        }
-      ],
-      "x": 214,
-      "y": 1153,
-      "rtype": "Variable",
-      "rsubtype": "Get Mentioned User",
-      "formdata": [
-        "UsEr",
-        "User",
-        "temp"
-      ],
-      "formnames": [
-        "varname",
-        "vartype",
-        "saveVarType"
-      ],
-      "messageActionRows": [],
-      "valueFields": []
-    },
-    {
-      "type": "response",
-      "name": "ADD role",
-      "guid": "62e0db27-0bd9-4d85-b4bd-2fb66ba3ee30",
-      "reactionFields": [],
-      "embedfields": [],
-      "outputs": [
-        {
-          "label": "next response",
-          "connections": []
-        }
-      ],
-      "inputs": [
-        {
-          "label": "trigger",
-          "id": "a734e2c8-b1af-438a-9f23-ca7d3abc81ec"
-        }
-      ],
-      "x": 382,
-      "y": 1160,
-      "rtype": "User Action",
-      "rsubtype": "Add Role to User",
-      "formdata": [
-        "${tempVars.UsEr.id}",
-        "1065980383763628071"
-      ],
-      "formnames": [
-        "user",
-        "roleName"
       ],
       "messageActionRows": [],
       "valueFields": []

@@ -587,28 +587,6 @@
           "savetovariabletype": "temp"
         }
       ]
-    },
-    {
-      "name": "addrole",
-      "actions": [
-        {
-          "name": "Get UsEr",
-          "category": "Variable",
-          "type": "Get Mentioned User",
-          "messageActionRows": [],
-          "varname": "UsEr",
-          "vartype": "User",
-          "savevartype": "temp"
-        },
-        {
-          "name": "ADD role",
-          "category": "User Action",
-          "type": "Add Role to User",
-          "messageActionRows": [],
-          "user": "${tempVars.UsEr.id}",
-          "rolename": "1065980383763628071"
-        }
-      ]
     }
   ]
 }
